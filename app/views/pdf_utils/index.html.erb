@@ -1,0 +1,23 @@
+
+<% @data.each do |k, v| %>
+<div>
+  <b><%= k.to_s.titleize %></b>
+  <% unless v.class == Array %>
+    <%= v %>
+  <% else %>
+    <table>
+      <thead>
+        <td>Date</td>
+        <td>Transaction</td>
+        <td>Amount</td>
+      </thead>
+      <% v.each do |i| %>
+        <tr>
+          <%= i.collect{|j| "<td>#{j}</td>" }.join('').html_safe %>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+</div>
+<% end %>
+

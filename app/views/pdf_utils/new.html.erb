@@ -1,0 +1,6 @@
+<div>
+  <%= form_tag '/pdf_utils/process_pdf', :method => :post, :multipart => true do %>
+    <%= file_field_tag :pdf %>
+    <%= submit_tag 'Process' %>
+  <% end %>
+</div>
