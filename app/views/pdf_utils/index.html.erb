@@ -1,7 +1,7 @@
 <div class="pdf_data">
   <% @data.each do |k, v| %>
     <ul>
-      <li><b><%= k.capitalize %> :</b></li>
+      <li><b><%= k.to_s.titleize %> :</b></li>
       <li><% unless v.kind_of?(Array) %>
         <%= v %>
       <% else %>
