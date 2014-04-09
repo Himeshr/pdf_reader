@@ -11,3 +11,15 @@
  *= require_self
  *= require_tree .
  */
+ul li{
+  list-style: none;
+ }
+.fileupload {
+  margin : auto;
+  text-align: center;
+}
+table {
+  border-collapse: collapse;
+}
+table td { padding: 5px;border:1px solid;}
+table thead{font-weight: bold;}

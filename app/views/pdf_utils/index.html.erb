@@ -1,23 +1,26 @@
-
-<% @data.each do |k, v| %>
-<div>
-  <b><%= k.to_s.titleize %></b>
-  <% unless v.class == Array %>
-    <%= v %>
-  <% else %>
-    <table>
-      <thead>
-        <td>Date</td>
-        <td>Transaction</td>
-        <td>Amount</td>
-      </thead>
-      <% v.each do |i| %>
-        <tr>
-          <%= i.collect{|j| "<td>#{j}</td>" }.join('').html_safe %>
-        </tr>
-      <% end %>
-    </table>
+<div class="pdf_data">
+  <% @data.each do |k, v| %>
+    <ul>
+      <li><b><%= k.capitalize %> :</b></li>
+      <li><% unless v.kind_of?(Array) %>
+        <%= v %>
+      <% else %>
+        <table>
+          <thead>
+            <td>Date</td>
+            <td>Transaction</td>
+            <td>Amount</td>
+          </thead>
+          <% v.each do |j| %>
+            <tr>
+              <td><%=j[0]%></td>
+              <td><%=j[1]%></td>
+              <td><%=j[2]%></td>
+            </tr>
+          <% end %>
+        </table>
+      <% end %></li>
+    </ul>
   <% end %>
 </div>
-<% end %>
 
